@@ -1,5 +1,6 @@
+#load file and converts the string ? to NA
 data<-read.delim2("C:/Users/crist/Documents/Data Science/Johns Hopkins/Exploratory Data Analysis/exdata_data_household_power_consumption/household_power_consumption.txt",sep=";",na.strings = "?")
-print(sapply(data, function(x) sum(is.na(x))))
+#removes NA values from dataframe
 data<-na.omit(data)
 #convert string to date format
 data$Date<-as.Date(data$Date,format="%d/%m/%Y")
